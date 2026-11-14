@@ -24,7 +24,7 @@ from t02 import T02
 
 async def main():
     async with T02() as printer:
-        ok = await printer.print_image(Image.open("photo.png"), autocontrast=True)
+        ok = await printer.print_image(Image.open("photo.png"))
         print("done" if ok else "no completion report", printer.status)
 
 asyncio.run(main())
@@ -39,7 +39,7 @@ The printer is 384 dots wide (203 DPI), one bit per dot. The SDK flattens transp
 | Option | Effect |
 | --- | --- |
 | `darkness` | Software gamma. Above 1 prints darker, below 1 lighter. Default 1.15, which looked right on the tested T02 and paper. |
-| `autocontrast` | Stretches the tonal range first. Helps flat photos. |
+| `autocontrast` | Stretches the tonal range first. Helps flat photos. On by default; pass `False` for exact tones, e.g. pre-dithered art. |
 | `feed` | Paper feed after the job (`1B 64 n`), default 4. |
 
 ![Darkness examples](docs/img/dither-demo.png)

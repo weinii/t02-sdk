@@ -15,7 +15,7 @@ STATUS = {  # notification -> meaning
 }
 
 
-def to_raster(img: Image.Image, darkness: float = 1.15, autocontrast: bool = False) -> bytes:
+def to_raster(img: Image.Image, darkness: float = 1.15, autocontrast: bool = True) -> bytes:
     """PIL image -> 384px wide 1-bit rows, MSB first, 1 = black.
 
     darkness > 1 prints darker, < 1 lighter (software gamma; the T02 density command is unknown).

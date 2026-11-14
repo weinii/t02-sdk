@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400" font-family="-apple-system,Helvetica,Arial,sans-serif">
+  <title>T02 print flow</title>
+  <rect width="760" height="400" rx="12" fill="#14181f"/>
+  <!-- lifelines -->
+  <rect x="40" y="24" width="150" height="44" rx="8" fill="#243044"/><text x="115" y="52" fill="#e6edf3" font-size="16" text-anchor="middle">Your app (SDK)</text>
+  <rect x="570" y="24" width="150" height="44" rx="8" fill="#243044"/><text x="645" y="52" fill="#e6edf3" font-size="16" text-anchor="middle">Phomemo T02</text>
+  <line x1="115" y1="68" x2="115" y2="384" stroke="#3b4a63" stroke-dasharray="4 5"/>
+  <line x1="645" y1="68" x2="645" y2="384" stroke="#3b4a63" stroke-dasharray="4 5"/>
+
+  <!-- step rows: y = 110, 170, 230, 290, 350 ; cycle 12s -->
+  <g font-size="14" fill="#c9d4e3">
+    <!-- 1 -->
+    <g opacity="0"><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.02;0.2;0.22;1" dur="12s" repeatCount="indefinite"/>
+      <line x1="115" y1="110" x2="645" y2="110" stroke="#5b8def" stroke-width="2"/>
+      <text x="380" y="100" text-anchor="middle">1  connect, enable notify on FF03</text>
+      <circle r="6" fill="#5b8def"><animateMotion path="M115,110 L645,110" dur="1.6s" begin="0s;" repeatCount="indefinite"/></circle></g>
+    <!-- 2 -->
+    <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.2;0.22;0.4;0.42;1" dur="12s" repeatCount="indefinite"/>
+      <line x1="115" y1="170" x2="645" y2="170" stroke="#5b8def" stroke-width="2"/>
+      <text x="380" y="160" text-anchor="middle">2  init queries  1F 11 7B … 1F 11 63  (FF02)</text>
+      <circle r="6" fill="#5b8def"><animateMotion path="M115,170 L645,170" dur="1.6s" repeatCount="indefinite"/></circle></g>
+    <!-- 3 -->
+    <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.4;0.42;0.6;0.62;1" dur="12s" repeatCount="indefinite"/>
+      <line x1="645" y1="230" x2="115" y2="230" stroke="#4cc38a" stroke-width="2"/>
+      <text x="380" y="220" text-anchor="middle">3  replies: packet limit, MAC, serial, status</text>
+      <circle r="6" fill="#4cc38a"><animateMotion path="M645,230 L115,230" dur="1.6s" repeatCount="indefinite"/></circle></g>
+    <!-- 4 -->
+    <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.6;0.62;0.8;0.82;1" dur="12s" repeatCount="indefinite"/>
+      <line x1="115" y1="290" x2="645" y2="290" stroke="#e5a04b" stroke-width="2"/>
+      <text x="380" y="280" text-anchor="middle">4  raster chunks (≤ 182 B each), wait for credit 01 01</text>
+      <circle r="6" fill="#e5a04b"><animateMotion path="M115,290 L645,290" dur="0.6s" repeatCount="indefinite"/></circle>
+      <circle r="6" fill="#4cc38a"><animateMotion path="M645,312 L115,312" dur="0.6s" begin="0.3s" repeatCount="indefinite"/></circle></g>
+    <!-- 5 -->
+    <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.8;0.82;0.98;1" dur="12s" repeatCount="indefinite"/>
+      <line x1="645" y1="350" x2="115" y2="350" stroke="#4cc38a" stroke-width="2"/>
+      <text x="380" y="340" text-anchor="middle">5  1A 0F 0C  =  print done</text>
+      <circle r="6" fill="#4cc38a"><animateMotion path="M645,350 L115,350" dur="1.6s" repeatCount="indefinite"/></circle></g>
+  </g>
+</svg>

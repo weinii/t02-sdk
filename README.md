@@ -91,3 +91,7 @@ All bytes below were checked against a T02, except where noted.
 
 Rows go top to bottom, 48 bytes each, the most significant bit is the leftmost dot, 1 is black.
 Send the whole image as **one** block (height is 16 bit). Splitting into 255-row blocks, as the Flutter repo does, produced double lines at every seam on this T02. One block of 700 rows printed cleanly; much longer images were not tested.
+
+## License
+
+MIT, see [LICENSE](LICENSE).

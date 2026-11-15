@@ -15,6 +15,8 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python t02.py photo.png    # prints an image
 ```
 
+As a dependency: `pip install https://github.com/weinii/t02-sdk/archive/refs/heads/main.zip`.
+
 Quit the Phomemo app first. The printer accepts only one BLE connection, and while the app holds it the T02 does not show up in scans.
 
 ```python

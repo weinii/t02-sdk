@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "t02"
+version = "0.1.0"
+description = "Print to a Phomemo T02 thermal printer over BLE"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = ["bleak", "pillow"]
+
+[tool.setuptools]
+py-modules = ["t02"]
